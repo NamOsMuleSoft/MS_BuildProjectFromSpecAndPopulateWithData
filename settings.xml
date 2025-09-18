@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<settings>
+    
+    <pluginGroups>
+        <pluginGroup>org.mule.tools</pluginGroup>
+    </pluginGroups>
+    
+    <servers>
+        <server>
+            <id>Repository</id>
+            <username>~~~Client~~~</username>
+            <password>CLIENT_ID_PLACEHOLDER~?~CLIENT_SECRET_PLACEHOLDER</password>
+        </server>
+        <server>
+            <id>PrivateExchangeRepository</id>
+            <username>~~~Client~~~</username>
+            <password>CLIENT_ID_PLACEHOLDER~?~CLIENT_SECRET_PLACEHOLDER</password>
+        </server>
+    </servers>
+</settings>
