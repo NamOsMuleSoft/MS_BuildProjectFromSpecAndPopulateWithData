@@ -25,6 +25,6 @@ Name of the file must be  slugifyed version of the API name
 
 
 PROMPT 2 : 
-Great 
-can you publish in Exchange in MCPDemo business group (d8a4a60b-1005-4713-a816-f735e51398d7)
+Create me a file load_NAMEOFTHEPOSTOPERATION.json with an json array of items to be sent to the POST operation.
+You should inject 10 product
 
