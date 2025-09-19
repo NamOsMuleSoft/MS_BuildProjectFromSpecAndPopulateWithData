@@ -1,0 +1,83 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Flight API",
+    "version": "1.0.0",
+    "description": "API to manage Flights with operations to list all flights and create multiple flights from an array."
+  },
+  "paths": {
+    "/flights": {
+      "get": {
+        "summary": "List flights",
+        "operationId": "listFlights",
+        "responses": {
+          "200": {
+            "description": "A list of flights",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Flight" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create flights",
+        "operationId": "createFlights",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/Flight" }
+              },
+              "examples": {
+                "sample": {
+                  "value": [
+                    { "From": "SFO", "To": "JFK", "price": 299.99, "seatavailable": 42 },
+                    { "From": "LAX", "To": "ORD", "price": 189.50, "seatavailable": 18 }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Flights created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Flight" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Flight": {
+        "type": "object",
+        "properties": {
+          "From": { "type": "string", "description": "Origin airport or city" },
+          "To": { "type": "string", "description": "Destination airport or city" },
+          "price": { "type": "number", "format": "float", "description": "Ticket price in USD" },
+          "seatavailable": { "type": "integer", "format": "int32", "description": "Number of available seats" }
+        },
+        "required": ["From", "To", "price", "seatavailable"],
+        "additionalProperties": false,
+        "example": { "From": "SFO", "To": "SEA", "price": 129.0, "seatavailable": 12 }
+      }
+    }
+  }
+}
+
+

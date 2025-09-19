@@ -1,0 +1,14 @@
+[
+  { "From": "LHR", "To": "CDG", "price": 129.99, "seatavailable": 24 },
+  { "From": "AMS", "To": "FRA", "price": 109.50, "seatavailable": 30 },
+  { "From": "BCN", "To": "MAD", "price": 79.00, "seatavailable": 40 },
+  { "From": "FCO", "To": "ATH", "price": 142.25, "seatavailable": 18 },
+  { "From": "CPH", "To": "OSL", "price": 95.75, "seatavailable": 22 },
+  { "From": "LIS", "To": "BCN", "price": 119.00, "seatavailable": 28 },
+  { "From": "VIE", "To": "ZRH", "price": 104.99, "seatavailable": 16 },
+  { "From": "DUB", "To": "BRU", "price": 139.49, "seatavailable": 20 },
+  { "From": "PRG", "To": "WAW", "price": 88.30, "seatavailable": 26 },
+  { "From": "HEL", "To": "IST", "price": 199.95, "seatavailable": 14 }
+]
+
+
