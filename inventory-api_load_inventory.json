@@ -1,0 +1,14 @@
+[
+  { "id": "i-001", "name": "Screw", "quantity": 100 },
+  { "id": "i-002", "name": "Bolt", "quantity": 250 },
+  { "id": "i-003", "name": "Nut", "quantity": 300 },
+  { "id": "i-004", "name": "Washer", "quantity": 500 },
+  { "id": "i-005", "name": "Nail", "quantity": 1000 },
+  { "id": "i-006", "name": "Rivet", "quantity": 200 },
+  { "id": "i-007", "name": "Bracket", "quantity": 75 },
+  { "id": "i-008", "name": "Clamp", "quantity": 120 },
+  { "id": "i-009", "name": "Hinge", "quantity": 60 },
+  { "id": "i-010", "name": "Spring", "quantity": 180 }
+]
+
+
