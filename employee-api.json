@@ -1,0 +1,83 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Employee API",
+    "version": "1.0.0",
+    "description": "API to manage Employees with operations to list all employees and create multiple employees from an array."
+  },
+  "paths": {
+    "/employees": {
+      "get": {
+        "summary": "List employees",
+        "operationId": "listEmployees",
+        "responses": {
+          "200": {
+            "description": "A list of employees",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Employee" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create employees",
+        "operationId": "createEmployees",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/Employee" }
+              },
+              "examples": {
+                "sample": {
+                  "value": [
+                    { "firstName": "Jane", "lastName": "Doe", "position": "Engineer", "role": "Developer" },
+                    { "firstName": "John", "lastName": "Smith", "position": "Manager", "role": "Team Lead" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Employees created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Employee" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Employee": {
+        "type": "object",
+        "properties": {
+          "firstName": { "type": "string", "description": "Employee first name" },
+          "lastName": { "type": "string", "description": "Employee last name" },
+          "position": { "type": "string", "description": "Job position" },
+          "role": { "type": "string", "description": "Role within the organization" }
+        },
+        "required": ["firstName", "lastName", "position", "role"],
+        "additionalProperties": false,
+        "example": { "firstName": "Ada", "lastName": "Lovelace", "position": "Engineer", "role": "Developer" }
+      }
+    }
+  }
+}
+
+

@@ -9,16 +9,16 @@ Create an API Spec
 
 PROMPT 1 : 
 
-Can you please create me an API spec (openapi 3.0.0 and json) with name flight API
+Can you please create me an API spec (openapi 3.0.0 and json) with name employee API
 It has 2 operations 
 Get : that returns all
 Post : that allow to ton create from an array
 
 Object should contains
-- From 
-- To 
-- price
-- seatavailable
+- firstName 
+- lastName
+- position
+- role
 
 Name of the file must be  slugifyed version of the API name
 
