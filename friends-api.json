@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Friends API",
+    "version": "1.0.0",
+    "description": "API to manage Friends with operations to list all friends and create multiple friends from an array."
+  },
+  "paths": {
+    "/friends": {
+      "get": {
+        "summary": "List friends",
+        "operationId": "listFriends",
+        "responses": {
+          "200": {
+            "description": "A list of friends",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Friend" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create friends",
+        "operationId": "createFriends",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/Friend" }
+              },
+              "examples": {
+                "sample": {
+                  "value": [
+                    { "firstName": "Alice", "lastName": "Johnson" },
+                    { "firstName": "Bob", "lastName": "Williams" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Friends created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Friend" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Friend": {
+        "type": "object",
+        "properties": {
+          "firstName": { "type": "string", "description": "Friend first name" },
+          "lastName": { "type": "string", "description": "Friend last name" }
+        },
+        "required": ["firstName", "lastName"],
+        "additionalProperties": false,
+        "example": { "firstName": "Charlie", "lastName": "Brown" }
+      }
+    }
+  }
+}
+
+
