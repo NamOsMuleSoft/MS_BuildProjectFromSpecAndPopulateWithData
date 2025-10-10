@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SimpleInventoryItem",
+  "description": "Schéma plat et minimal d'un item d'inventaire pour démo Agent MCP (une seule profondeur).",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "sku": { "type": "string", "description": "Identifiant unique produit" },
+    "productName": { "type": "string", "description": "Nom produit" },
+    "brand": { "type": "string", "description": "Marque (ex: Brossard)" },
+    "locationId": { "type": "string", "description": "Entrepôt ou magasin" },
+    "availableQuantity": { "type": "integer", "minimum": 0, "description": "Quantité disponible" },
+    "unit": { "type": "string", "description": "Unité (ex: pcs, box)" },
+    "leadTimeDays": { "type": "integer", "minimum": 0, "description": "Délai fournisseur en jours (optionnel)" }
+  },
+  "required": ["sku", "productName", "brand", "availableQuantity", "unit"]
+}

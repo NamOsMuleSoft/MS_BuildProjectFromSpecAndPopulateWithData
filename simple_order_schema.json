@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SimpleOrder",
+  "description": "Schéma plat et minimal d'une commande pour démo Agent MCP (une seule profondeur).",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "orderId": { "type": "string", "description": "Identifiant de commande" },
+    "orderDate": { "type": "string", "format": "date-time", "description": "Date de la commande" },
+    "customerId": { "type": "string", "description": "Identifiant client" },
+    "customerName": { "type": "string", "description": "Nom client" },
+    "sku": { "type": "string", "description": "SKU du produit commandé (une seule ligne par objet)" },
+    "quantity": { "type": "integer", "minimum": 1, "description": "Quantité commandée pour ce SKU" },
+    "unit": { "type": "string", "description": "Unité (ex: pcs)" },
+    "orderStatus": { "type": "string", "description": "Statut (confirmed, shipped, cancelled)" }
+  },
+  "required": ["orderId", "orderDate", "customerId", "sku", "quantity"]
+}

@@ -1,0 +1,22 @@
+[
+  { "seedName": "Blé tendre", "quantity": 120, "location": "WH-REIMS-01" },
+  { "seedName": "Maïs jaune", "quantity": 200, "location": "WH-LILLE-01" },
+  { "seedName": "Colza", "quantity": 80, "location": "WH-TOURS-01" },
+  { "seedName": "Tournesol", "quantity": 150, "location": "WH-PARIS-01" },
+  { "seedName": "Pois", "quantity": 60, "location": "WH-REIMS-01" },
+  { "seedName": "Sarrasin", "quantity": 40, "location": "WH-LILLE-01" },
+  { "seedName": "Orge", "quantity": 95, "location": "WH-TOURS-01" },
+  { "seedName": "Avoine", "quantity": 110, "location": "WH-PARIS-01" },
+  { "seedName": "Féverole", "quantity": 30, "location": "WH-REIMS-01" },
+  { "seedName": "Luzerne", "quantity": 75, "location": "WH-LILLE-01" },
+  { "seedName": "Trèfle rouge", "quantity": 55, "location": "WH-TOURS-01" },
+  { "seedName": "Seigle", "quantity": 45, "location": "WH-PARIS-01" },
+  { "seedName": "Lotus", "quantity": 25, "location": "WH-REIMS-01" },
+  { "seedName": "Chicorée", "quantity": 65, "location": "WH-LILLE-01" },
+  { "seedName": "Betterave fourragère", "quantity": 85, "location": "WH-TOURS-01" },
+  { "seedName": "Navette", "quantity": 35, "location": "WH-PARIS-01" },
+  { "seedName": "Phacélie", "quantity": 20, "location": "WH-REIMS-01" },
+  { "seedName": "Lin oléagineux", "quantity": 90, "location": "WH-LILLE-01" },
+  { "seedName": "Radis fourrager", "quantity": 50, "location": "WH-TOURS-01" },
+  { "seedName": "Moutarde blanche", "quantity": 130, "location": "WH-PARIS-01" }
+]

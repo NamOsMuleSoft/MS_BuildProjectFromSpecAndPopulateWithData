@@ -1,0 +1,83 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "order-seeds API",
+    "version": "1.0.0",
+    "description": "API minimale pour gérer les commandes de semences. GET renvoie toutes les commandes, POST permet de créer plusieurs commandes depuis un tableau."
+  },
+  "servers": [
+    { "url": "https://api.example.com", "description": "Production server (example)" }
+  ],
+  "paths": {
+    "/orders": {
+      "get": {
+        "summary": "Récupère toutes les commandes de semences",
+        "operationId": "getSeedOrders",
+        "responses": {
+          "200": {
+            "description": "Liste des commandes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SeedOrder" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Crée plusieurs commandes depuis un tableau",
+        "operationId": "createSeedOrders",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/SeedOrder" }
+              },
+              "examples": {
+                "multipleOrders": {
+                  "summary": "Exemple de payload",
+                  "value": [
+                    { "seedName": "Blé tendre", "quantity": 50, "customerName": "Coopérative Nord" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Commandes créées avec succès",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SeedOrder" }
+                }
+              }
+            }
+          },
+          "400": { "description": "Requête invalide" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SeedOrder": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "seedName": { "type": "string", "description": "Nom de la semence" },
+          "quantity": { "type": "integer", "minimum": 1, "description": "Quantité commandée" },
+          "customerName": { "type": "string", "description": "Nom du client" }
+        },
+        "required": ["seedName", "quantity", "customerName"]
+      }
+    }
+  }
+}

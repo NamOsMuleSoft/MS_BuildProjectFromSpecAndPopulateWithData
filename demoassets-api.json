@@ -1,0 +1,74 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "demoassets API",
+    "version": "1.0.0",
+    "description": "API to manage demo assets with operations to list all assets and create multiple assets from an array."
+  },
+  "paths": {
+    "/demoassets": {
+      "get": {
+        "summary": "List demo assets",
+        "operationId": "listDemoassets",
+        "responses": {
+          "200": {
+            "description": "A list of demo assets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Demoasset" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create demo assets",
+        "operationId": "createDemoassets",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/Demoasset" }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Demo assets created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Demoasset" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Demoasset": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Asset name" },
+          "subject": { "type": "string", "description": "Asset subject" },
+          "description": { "type": "string", "description": "Asset description" }
+        },
+        "required": ["name", "subject", "description"],
+        "additionalProperties": false,
+        "example": { "name": "Asset A", "subject": "Category X", "description": "Sample asset description" }
+      }
+    }
+  }
+}
+
+

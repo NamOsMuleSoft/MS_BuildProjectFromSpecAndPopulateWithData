@@ -1,0 +1,83 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "inventory-seeds API",
+    "version": "1.0.0",
+    "description": "API minimaliste pour gérer l'inventaire des semences. Deux opérations : GET (retourne tous les items) et POST (crée plusieurs items depuis un tableau)."
+  },
+  "servers": [
+    { "url": "https://api.example.com", "description": "Production server (example)" }
+  ],
+  "paths": {
+    "/seeds": {
+      "get": {
+        "summary": "Récupère tous les items de semences",
+        "operationId": "getSeedItems",
+        "responses": {
+          "200": {
+            "description": "Liste des items de semences",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SeedItem" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Crée plusieurs items de semences depuis un tableau",
+        "operationId": "createSeedItems",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/SeedItem" }
+              },
+              "examples": {
+                "multipleSeeds": {
+                  "summary": "Exemple de payload",
+                  "value": [
+                    { "seedName": "Blé tendre", "quantity": 100, "location": "WH-REIMS-01" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Items créés avec succès",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SeedItem" }
+                }
+              }
+            }
+          },
+          "400": { "description": "Requête invalide" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SeedItem": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "seedName": { "type": "string", "description": "Nom de la semence" },
+          "quantity": { "type": "integer", "minimum": 0, "description": "Quantité disponible" },
+          "location": { "type": "string", "description": "Emplacement (entrepôt/magasin)" }
+        },
+        "required": ["seedName", "quantity", "location"]
+      }
+    }
+  }
+}

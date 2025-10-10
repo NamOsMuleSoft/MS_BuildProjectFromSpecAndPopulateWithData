@@ -1,0 +1,14 @@
+[
+  { "name": "Asset 01", "subject": "Category A", "description": "Demo asset number 1" },
+  { "name": "Asset 02", "subject": "Category A", "description": "Demo asset number 2" },
+  { "name": "Asset 03", "subject": "Category B", "description": "Demo asset number 3" },
+  { "name": "Asset 04", "subject": "Category B", "description": "Demo asset number 4" },
+  { "name": "Asset 05", "subject": "Category C", "description": "Demo asset number 5" },
+  { "name": "Asset 06", "subject": "Category C", "description": "Demo asset number 6" },
+  { "name": "Asset 07", "subject": "Category D", "description": "Demo asset number 7" },
+  { "name": "Asset 08", "subject": "Category D", "description": "Demo asset number 8" },
+  { "name": "Asset 09", "subject": "Category E", "description": "Demo asset number 9" },
+  { "name": "Asset 10", "subject": "Category E", "description": "Demo asset number 10" }
+]
+
+
