@@ -33,6 +33,7 @@ Object should contains
 - name
 - description
 - price
+- randomnumber
 
 
 Name of the file must be  slugifyed version of the API name
@@ -41,6 +42,6 @@ Name of the file must be  slugifyed version of the API name
 
 
 PROMPT 2 : 
-Create me a file SLUGIFYEDVERSIONOFAPINAME_load_PATHOFTHEPOSTOPERATION.json with an json array of items to be sent to the POST operation.
+Create me a file SLUGIFYEDVERSIONOFAPINAME_load_PATHOFTHEPOSTOPERATION.json with an json array of products like iphone to be sent to the POST operation.
 You should inject 1000 Line
 
