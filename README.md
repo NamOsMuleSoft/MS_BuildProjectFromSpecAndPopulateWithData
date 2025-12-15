@@ -23,17 +23,20 @@ order-brossard
 
 PROMPT 1 : 
 
-Can you please create me an API spec (openapi 3.0.0 and json) with name product-demo API
+Can you please create me an API spec (openapi 3.0.0 and json) with name candidate-demo API
 It has 2 operations 
 Get : that returns all
-Post : that allow to ton create from an array
+Post : that allow to create candidates from an array
 
 Object should contains
 - id 
-- name
-- description
-- price
-- randomnumber
+- firstName
+- lastName
+- email
+- phoneNumber
+- jobTitle
+- grade (values could be : associate , junior, senior, principal)
+- coOptPersonEmail
 
 
 Name of the file must be  slugifyed version of the API name
@@ -42,6 +45,6 @@ Name of the file must be  slugifyed version of the API name
 
 
 PROMPT 2 : 
-Create me a file SLUGIFYEDVERSIONOFAPINAME_load_PATHOFTHEPOSTOPERATION.json with an json array of products  to be sent to the POST operation.
-You should inject 1000 Line
+Create me a file SLUGIFYEDVERSIONOFAPINAME_load_PATHOFTHEPOSTOPERATION.json with an json array of candidate to be sent to the POST operation.
+You should inject 20 Line
 
